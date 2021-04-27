@@ -36,6 +36,11 @@ const Router = () => {
         component={MainApp}
         options={{headerShown: false}}
       />
+      <Stack.Screen
+        name="RegisterScreen"
+        component={RegisterScreen}
+        options={{headerShown: false}}
+      />
     </Stack.Navigator>
   );
 };
