@@ -11,16 +11,16 @@ const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavigation {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Explore" component={Home} />
-      <Tab.Screen name="Courses" component={Home} />
-      <Tab.Screen name="Account" component={Home} />
+      <Tab.Screen name="Transaksi" component={Home} />
+      <Tab.Screen name="Al-Qur'an" component={Home} />
+      <Tab.Screen name="Profile" component={Home} />
     </Tab.Navigator>
   );
 };
 
 const Router = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName="SplashScreen">
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
@@ -34,11 +34,6 @@ const Router = () => {
       <Stack.Screen
         name="MainApp"
         component={MainApp}
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="RegisterScreen"
-        component={RegisterScreen}
         options={{headerShown: false}}
       />
     </Stack.Navigator>
