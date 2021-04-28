@@ -15,6 +15,14 @@ import IcSearch from './IcSearch.png';
 import IcClock from './IcClock.svg';
 import IcStar from './IcStar.svg';
 import IcDot from './IcDot.png';
+import IcGoogle from './IcGoogle.svg';
+import IcFacebook from './IcFacebook.svg';
+import IcApple from './IcApple.svg';
+import IcItem1 from './IcItem1.png';
+import IcItem2 from './IcItem2.png';
+import IcItem3 from './IcItem3.png';
+import IcItem4 from './IcItem4.png';
+import IcItem5 from './IcItem5.png';
 
 export {
   IcCheck,
@@ -34,4 +42,12 @@ export {
   IcClock,
   IcStar,
   IcDot,
+  IcApple,
+  IcFacebook,
+  IcGoogle,
+  IcItem1,
+  IcItem2,
+  IcItem3,
+  IcItem4,
+  IcItem5,
 };
