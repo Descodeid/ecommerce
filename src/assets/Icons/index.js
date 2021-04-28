@@ -1,5 +1,6 @@
-import IcCheck from './IcCheck.png';
-import IcArrowRight from './IcArrowRight.svg';
+import IcGoogle from './IcGoogle'
+import IcFacebook from './IcFacebook'
+import IcIphone from './IcIphone'
 import IcArrowLeft from './IcArrowLeft.svg';
 import IcHomeActive from './IcHomeActive.png';
 import IcHome from './IcHome.png';
@@ -34,4 +35,7 @@ export {
   IcClock,
   IcStar,
   IcDot,
+  IcGoogle,
+  IcFacebook,
+  IcIphone
 };
