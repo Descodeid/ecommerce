@@ -23,6 +23,7 @@ import IcItem2 from './IcItem2.png';
 import IcItem3 from './IcItem3.png';
 import IcItem4 from './IcItem4.png';
 import IcItem5 from './IcItem5.png';
+import IcBack from './IcBack'
 
 export {
   IcCheck,
@@ -50,4 +51,5 @@ export {
   IcItem3,
   IcItem4,
   IcItem5,
+  IcBack,
 };
