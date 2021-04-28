@@ -21,7 +21,7 @@ import {
 import Banner from '../../assets/JSON/Banner';
 import {Gap, Product, SearchInput} from '../../components';
 
-const Home = () => {
+const Home = ({navigation}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const {width} = useWindowDimensions();
   const scrollX = useRef(new Animated.Value(0)).current;
@@ -130,10 +130,19 @@ const Home = () => {
           </View>
         </View>
         <Gap height={32} />
-        <Product title="Produk" discount="Diskon" type="diskon" />
-        <Gap height={39} />
-        <Product title="List Produk" type="normal" />
-        <Gap height={100} />
+        <Product
+          title="Produk"
+          discount="Diskon"
+          type="diskon"
+          onPress={() => navigation.navigate('ProductDetail', 'diskon')}
+        />
+        <Gap height={20} />
+        <Product
+          title="Rekomendasi untuk Anda"
+          type="normal"
+          onPress={() => navigation.navigate('ProductDetail', 'normal')}
+        />
+        <Gap height={80} />
       </ScrollView>
     </View>
   );

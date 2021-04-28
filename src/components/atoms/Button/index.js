@@ -2,10 +2,10 @@ import React from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import normalize from 'react-native-normalize';
 
-const Button = () => {
+const Button = ({text, fontSize = 12}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Tambah ke Keranjang</Text>
+      <Text style={styles.text(fontSize)}>{text}</Text>
     </View>
   );
 };
@@ -20,9 +20,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: normalize(12),
   },
-  text: {
+  text: fontSize => ({
     fontFamily: 'OpenSans-Bold',
-    fontSize: normalize(12),
+    fontSize: normalize(fontSize),
     color: '#FFFFFF',
-  },
+  }),
 });

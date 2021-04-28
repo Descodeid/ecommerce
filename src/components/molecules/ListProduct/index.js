@@ -1,13 +1,15 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import normalize from 'react-native-normalize';
 import {IcDot, IcStar, Product1} from '../../../assets';
 import {Button, Gap} from '../../atoms';
 
-const ListProduct = ({type}) => {
+const ListProduct = ({type, onPress}) => {
   return (
     <View style={styles.container}>
-      <Image source={Product1} />
+      <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
+        <Image source={Product1} />
+      </TouchableOpacity>
       <Gap height={8} />
       <Text style={styles.title}>Nike Savaleos</Text>
       <Gap height={4} />
@@ -29,7 +31,7 @@ const ListProduct = ({type}) => {
         <Gap width={14} />
       </View>
       <View style={styles.button}>
-        <Button />
+        <Button text="Tambah ke Keranjang" />
       </View>
       {type === 'diskon' && (
         <>
@@ -52,6 +54,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
     borderRadius: normalize(5),
     marginRight: normalize(15),
+    marginVertical: normalize(15),
     elevation: 2,
   },
   containerPrice: {

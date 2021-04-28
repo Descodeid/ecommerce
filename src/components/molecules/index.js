@@ -5,6 +5,7 @@ import BottomNavigation from './BottomNavigation';
 import SearchInput from './SearchInput';
 import Product from './Product';
 import ListProduct from './ListProduct';
+import Header from './Header';
 
 export {
   IntroSliderItem,
@@ -14,4 +15,5 @@ export {
   SearchInput,
   Product,
   ListProduct,
+  Header,
 };
