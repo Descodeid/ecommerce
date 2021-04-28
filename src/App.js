@@ -7,8 +7,7 @@ import RegisterScreen from './pages/Register'
 const App = () => {
   return (
     <NavigationContainer>
-      {/* <Router /> */}
-      <RegisterScreen />
+      <Router />
     </NavigationContainer>
   );
 };

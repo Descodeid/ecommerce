@@ -1,14 +1,12 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import normalize from 'react-native-normalize';
 
-const Button = ({text, onPress}) => {
+const Button = ({text, fontSize = 12}) => {
   return (
-    <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
-      <View style={styles.container}>
-        <Text style={styles.text}>{text}</Text>
-      </View>
-    </TouchableOpacity>
+    <View style={styles.container}>
+      <Text style={styles.text(fontSize)}>{text}</Text>
+    </View>
   );
 };
 
@@ -16,15 +14,15 @@ export default Button;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#5D55B4',
-    paddingVertical: normalize(20),
+    backgroundColor: '#4584FF',
+    borderRadius: normalize(10),
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 4,
+    paddingVertical: normalize(12),
   },
-  text: {
-    fontFamily: 'OpensSans-Bold',
-    fontSize: normalize(18),
-    color: 'white',
-  },
+  text: fontSize => ({
+    fontFamily: 'OpenSans-Bold',
+    fontSize: normalize(fontSize),
+    color: '#FFFFFF',
+  }),
 });
