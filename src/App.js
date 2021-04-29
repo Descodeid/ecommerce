@@ -2,14 +2,15 @@ import {NavigationContainer} from '@react-navigation/native';
 import React from 'react';
 import 'react-native-gesture-handler';
 import Router from '../src/router';
-import Bantuan from './pages/Bantuan'
-import TerimaKasih from './pages/TerimaKasih';
+// import Register from './pages/Register'
+import Login from './pages/Login'
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Bantuan />
-      {/* <TerimaKasih /> */}
+      {/* <Bantuan /> */}
+      {/* <Register /> */}
+      <Login />
     </NavigationContainer>
   );
 };

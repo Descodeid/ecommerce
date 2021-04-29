@@ -16,9 +16,10 @@ export default TextInput;
 
 const styles = StyleSheet.create({
   input: {
-    borderBottomWidth: 1,
+    backgroundColor: '#E9F0FF',
     borderColor: '#818181',
     paddingLeft: normalize(12),
     paddingVertical: normalize(8),
+    borderRadius: normalize(10),
   },
 });

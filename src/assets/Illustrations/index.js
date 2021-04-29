@@ -7,6 +7,7 @@ import ILPil1 from './ILPil1';
 import ILBantuan from './ILBantuan';
 import ILButtonHelp from './ILButtonHelp'
 import ILTerimaKasih from './ILTerimaKasih'
+import ILLogin from './ILLogin'
 
 export {
   ILLogo,
@@ -18,4 +19,5 @@ export {
   ILBantuan,
   ILButtonHelp,
   ILTerimaKasih,
+  ILLogin,
 };

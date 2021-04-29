@@ -4,37 +4,27 @@ import normalize from 'react-native-normalize';
 import {
   IcFacebook,
   IcGoogle,
-  IcItem1,
-  IcItem2,
-  IcItem3,
-  IcItem4,
-  IcItem5,
-  ILRegister,
+  ILLogin,
 } from '../../assets';
 import {Button, Gap, TextInput} from '../../components';
 
-const Register = () => {
+const Login = () => {
   return (
     <View style={styles.page}>
       <Gap height={20} />
       <View style={styles.Illustration}>
-        <ILRegister />
+        <ILLogin />
       </View>
       <Gap height={15} />
       <View style={styles.input}>
-        <TextInput placeholder="Nama" />
         <Gap height={15} />
-        <TextInput placeholder="No Handphone" />
-        <Gap height={15} />
-        <TextInput placeholder="Email" />
+        <TextInput placeholder="No Handphone / Email" />
         <Gap height={15} />
         <TextInput placeholder="Password" />
-        <Gap height={15} />
-        <TextInput placeholder="Ulangi Password" />
       </View>
       <Gap height={23} />
       <View style={styles.button}>
-        <Button text="Register" />
+        <Button text="Login" />
       </View>
       <Gap height={23} />
       <Text style={styles.regist}>
@@ -54,7 +44,7 @@ const Register = () => {
   );
 };
 
-export default Register;
+export default Login;
 
 const styles = StyleSheet.create({
   page: {
