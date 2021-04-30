@@ -1,31 +1,26 @@
-import {createStackNavigator} from '@react-navigation/stack';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import React, {useState} from 'react';
-import {Home, IntroSlider, ProductDetail, SplashScreen} from '../pages';
+import {createStackNavigator} from '@react-navigation/stack';
+import React from 'react';
 import {BottomNavigation} from '../components';
+import {Home, IntroSlider, ProductDetail, SplashScreen} from '../pages';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
 
 const MainApp = () => {
-  const [token] = useState(true);
   return (
     <Tab.Navigator tabBar={props => <BottomNavigation {...props} />}>
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Transaksi" component={Home} />
       <Tab.Screen name="Al-Qur'an" component={Home} />
-      {token ? (
-        <Tab.Screen name="Profile" component={Home} />
-      ) : (
-        <Tab.Screen name="Masuk" component={Home} />
-      )}
+      <Tab.Screen name="Profile" component={Home} />
     </Tab.Navigator>
   );
 };
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="SplashScreen">
+    <Stack.Navigator initialRouteName="MainApp">
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}

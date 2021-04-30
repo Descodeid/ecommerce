@@ -26,8 +26,6 @@ const Icon = ({label, active}) => {
       return active ? <IcQuranActive /> : <IcQuran />;
     case 'Profile':
       return active ? <IcProfileActive /> : <IcProfile />;
-    case 'Masuk':
-      return active ? <IcQuranActive /> : <IcQuran />;
 
     default:
       <IcHomeActive />;
