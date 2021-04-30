@@ -4,7 +4,7 @@ import normalize from 'react-native-normalize';
 import {IcArrowLeft, IcCartBlack} from '../../../assets';
 import {Gap} from '../../atoms';
 
-const Header = ({text, onPress}) => {
+const Header = ({text, type, onPress}) => {
   return (
     <View style={styles.container}>
       <View style={styles.left}>
@@ -14,7 +14,7 @@ const Header = ({text, onPress}) => {
         <Gap width={15} />
         <Text style={styles.text}>{text}</Text>
       </View>
-      <IcCartBlack />
+      {type === 'cart' && <IcCartBlack />}
     </View>
   );
 };

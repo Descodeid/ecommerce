@@ -3,9 +3,10 @@ import IntroSlider from './IntroSlider';
 import Register from './Register';
 import Home from './Home';
 import ProductDetail from './ProductDetail';
-import Bantuan from './Bantuan';
 import Login from './Login';
 import Profile from './Profile';
+import TransactionSuccess from './TransactionSuccess';
+import Support from './Support';
 
 export {
   SplashScreen,
@@ -13,7 +14,8 @@ export {
   Home,
   ProductDetail,
   Register,
-  Bantuan,
   Login,
   Profile,
+  TransactionSuccess,
+  Support,
 };

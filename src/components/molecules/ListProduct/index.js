@@ -31,7 +31,7 @@ const ListProduct = ({type, onPress}) => {
         <Gap width={14} />
       </View>
       <View style={styles.button}>
-        <Button text="Tambah ke Keranjang" />
+        <Button text="Tambah ke Keranjang" borderRadius={10} />
       </View>
       {type === 'diskon' && (
         <>

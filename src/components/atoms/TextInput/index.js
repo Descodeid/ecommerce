@@ -7,7 +7,7 @@ const TextInput = ({placeholder}) => {
     <TextInputRN
       style={styles.input}
       placeholder={placeholder}
-      placeholderTextColor="#A3A3A3"
+      placeholderTextColor="#3D3D3D"
     />
   );
 };
@@ -17,9 +17,8 @@ export default TextInput;
 const styles = StyleSheet.create({
   input: {
     backgroundColor: '#E9F0FF',
-    borderColor: '#818181',
-    paddingLeft: normalize(12),
-    paddingVertical: normalize(8),
-    borderRadius: normalize(10),
+    paddingLeft: normalize(20),
+    paddingVertical: normalize(16.5),
+    borderRadius: normalize(8),
   },
 });

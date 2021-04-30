@@ -1,30 +1,39 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import normalize from 'react-native-normalize';
 import {ILProfile} from '../../assets';
 import {Button, Gap} from '../../components';
 
-const Profile = () => {
+const Profile = ({navigation}) => {
   return (
-    <View style={styles.header}>
+    <View style={styles.page}>
       <ILProfile />
-      <Gap height={35} />
-      <View style={styles.text}>
-        <Text style={styles.text1}>Register</Text>
+      <Gap height={30} />
+      <View style={styles.container}>
+        <Text style={styles.textRegister}>Register Sekarang</Text>
         <Gap height={10} />
-        <Text style={styles.text2}>kamu belum terdaftar, ayo daftar</Text>
-        <Text style={styles.text2}>sekarang dan nikmati kemudahan</Text>
-        <Text style={styles.text2}>dan kepuasan dalam berbelanja</Text>
+        <Text style={styles.desc}>
+          kamu belum terdaftar, ayo daftar sekarang dan nikmati kemudahan dan
+          kepuasan dalam berbelanja
+        </Text>
       </View>
-      <Gap height={56} />
+      <Gap height={44} />
       <View style={styles.button}>
-        <Button text="Register Sekarang" />
+        <Button
+          text="Register Sekarang"
+          fontSize={14}
+          onPress={() => navigation.navigate('Register')}
+        />
       </View>
       <Gap height={24} />
       <View style={styles.footer}>
-        <Text style={styles.text3}>Sudah punya akun ?</Text>
-        <Gap width={4} />
-        <Text style={styles.text4}>Login disini</Text>
+        <Text style={styles.text3}>Sudah punya akun?</Text>
+        <Gap width={6} />
+        <TouchableOpacity
+          activeOpacity={0.7}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.text4}>Login disini</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
@@ -33,38 +42,42 @@ const Profile = () => {
 export default Profile;
 
 const styles = StyleSheet.create({
-  header: {
-    position: 'absolute',
-    top: normalize(215),
-    left: normalize(100),
-    right: normalize(110),
+  page: {
+    flex: 1,
+    backgroundColor: '#FFFFFF',
+    justifyContent: 'center',
     alignItems: 'center',
   },
-  text: {
+  container: {
+    width: normalize(210),
     alignItems: 'center',
-    width: 230,
   },
-  text1: {
+  textRegister: {
     fontFamily: 'OpenSans-Bold',
-    fontSize: 16,
+    fontSize: normalize(16),
+    color: '#3D3D3D',
   },
-  text2: {
-    fontSize: 14,
-    fontFamily: 'OpenSans-Regular'
+  desc: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: normalize(14),
+    color: '#3D3D3D',
+    textAlign: 'center',
   },
   button: {
-    backgroundColor: 'yellow',
-    width: '150%',
+    width: '100%',
+    paddingHorizontal: normalize(15),
   },
   footer: {
-      flexDirection: 'row'
+    flexDirection: 'row',
   },
   text3: {
-      fontFamily: 'OpenSans-Regular',
-      fontSize: 14,
+    fontFamily: 'OpenSans-Regular',
+    fontSize: normalize(14),
+    color: '#3D3D3D',
   },
   text4: {
-      fontFamily: 'OpenSans-Bold',
-      color: '#4584FF'
-  }
+    fontFamily: 'OpenSans-Bold',
+    fontSize: normalize(14),
+    color: '#4584FF',
+  },
 });

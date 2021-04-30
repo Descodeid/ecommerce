@@ -4,8 +4,10 @@ import React from 'react';
 import {
   Home,
   IntroSlider,
+  Login,
   ProductDetail,
   Profile,
+  Register,
   SplashScreen,
 } from '../pages';
 import {BottomNavigation} from '../components';
@@ -45,6 +47,16 @@ const Router = () => {
       <Stack.Screen
         name="ProductDetail"
         component={ProductDetail}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Register"
+        component={Register}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Login"
+        component={Login}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

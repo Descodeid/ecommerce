@@ -1,54 +1,34 @@
 import React from 'react';
-import {Image, StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import normalize from 'react-native-normalize';
-import {
-  IcFacebook,
-  IcGoogle,
-  IcItem1,
-  IcItem2,
-  IcItem3,
-  IcItem4,
-  IcItem5,
-  ILRegister,
-} from '../../assets';
+import {ILRegister} from '../../assets';
 import {Button, Gap, TextInput} from '../../components';
 
 const Register = () => {
   return (
     <View style={styles.page}>
-      <Gap height={20} />
-      <View style={styles.Illustration}>
+      <View style={styles.illustration}>
         <ILRegister />
       </View>
-      <Gap height={15} />
+      <Gap height={20} />
       <View style={styles.input}>
         <TextInput placeholder="Nama" />
-        <Gap height={15} />
+      </View>
+      <View style={styles.input}>
         <TextInput placeholder="No Handphone" />
-        <Gap height={15} />
+      </View>
+      <View style={styles.input}>
         <TextInput placeholder="Email" />
-        <Gap height={15} />
+      </View>
+      <View style={styles.input}>
         <TextInput placeholder="Password" />
-        <Gap height={15} />
+      </View>
+      <View style={styles.input}>
         <TextInput placeholder="Ulangi Password" />
       </View>
-      <Gap height={23} />
+      <Gap height={44} />
       <View style={styles.button}>
-        <Button text="Register" />
-      </View>
-      <Gap height={23} />
-      <Text style={styles.regist}>
-        Atau Register dengan
-      </Text>
-      <Gap height={10} />
-      <View style={styles.icons}>
-      <View style={styles.icon}>
-        <IcGoogle />
-        </View>
-        <Gap width={10} />
-        <View style={styles.icon1}>
-        <IcFacebook />
-        </View>
+        <Button text="Register" fontSize={14} />
       </View>
     </View>
   );
@@ -60,65 +40,17 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-  },
-  Illustration: {
     justifyContent: 'center',
+  },
+  illustration: {
     alignItems: 'center',
-  },
-  item1: {
-    position: 'absolute',
-    top: normalize(80),
-    left: normalize(60),
-  },
-  item2: {
-    position: 'absolute',
-    top: normalize(80),
-    left: normalize(270),
-  },
-  item3: {
-    position: 'absolute',
-    top: normalize(230.51),
-    left: normalize(57),
-  },
-  item4: {
-    position: 'absolute',
-    top: normalize(241),
-    left: normalize(258),
-  },
-  item5: {
-    position: 'absolute',
-    top: normalize(200.37),
-    left: normalize(115.83),
   },
   input: {
     paddingHorizontal: normalize(20),
+    marginBottom: normalize(20),
   },
   button: {
-    paddingHorizontal: normalize(68),
+    width: '100%',
+    paddingHorizontal: normalize(20),
   },
-  regist: {
-    textAlign: 'center',
-    fontFamily: 'OpensSans',
-    fontSize: normalize(14),
-  },
-  icon: {
-    backgroundColor: 'white',
-    borderWidth: 1,
-    borderColor: '#C4C4C4',
-    borderRadius: normalize(20),
-    paddingHorizontal: normalize(26),
-    paddingVertical: normalize(16)
-  },
-  icon1: {
-    backgroundColor: 'white',
-    borderWidth: 1,
-    borderColor: '#C4C4C4',
-    borderRadius: normalize(20),
-    paddingHorizontal: normalize(26),
-    paddingVertical: normalize(16)
-  },
-  icons: {
-    flexDirection: 'row',
-    justifyContent: 'center'
-  }
 });

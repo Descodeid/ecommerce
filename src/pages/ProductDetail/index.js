@@ -80,7 +80,11 @@ const ProductDetail = ({navigation, route}) => {
 
   return (
     <View style={styles.page}>
-      <Header text="Detail Produk" onPress={() => navigation.goBack()} />
+      <Header
+        text="Detail Produk"
+        onPress={() => navigation.goBack()}
+        type="cart"
+      />
       <View style={styles.containerCarousel}>
         <FlatList
           data={Detail}
