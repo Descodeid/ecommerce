@@ -1,8 +1,14 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
+import {
+  Home,
+  IntroSlider,
+  ProductDetail,
+  Profile,
+  SplashScreen,
+} from '../pages';
 import {BottomNavigation} from '../components';
-import {Home, IntroSlider, ProductDetail, SplashScreen} from '../pages';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -13,7 +19,7 @@ const MainApp = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Transaksi" component={Home} />
       <Tab.Screen name="Al-Qur'an" component={Home} />
-      <Tab.Screen name="Profile" component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 };
