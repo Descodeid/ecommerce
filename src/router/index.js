@@ -4,6 +4,8 @@ import React from 'react';
 import {
   Home,
   IntroSlider,
+  ListCategory,
+  ListProduct,
   ListProductDiscount,
   Login,
   ProductDetail,
@@ -63,6 +65,16 @@ const Router = () => {
       <Stack.Screen
         name="ListProductDiscount"
         component={ListProductDiscount}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ListProduct"
+        component={ListProduct}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ListCategory"
+        component={ListCategory}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

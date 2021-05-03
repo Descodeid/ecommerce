@@ -8,6 +8,8 @@ import Profile from './Profile';
 import TransactionSuccess from './TransactionSuccess';
 import Support from './Support';
 import ListProductDiscount from './ListProductDiscount';
+import ListProduct from './ListProduct';
+import ListCategory from './ListCategory';
 
 export {
   SplashScreen,
@@ -20,4 +22,6 @@ export {
   TransactionSuccess,
   Support,
   ListProductDiscount,
+  ListProduct,
+  ListCategory,
 };

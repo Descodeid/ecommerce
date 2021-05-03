@@ -6,6 +6,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   useWindowDimensions,
   View,
 } from 'react-native';
@@ -37,7 +38,12 @@ const Home = ({navigation}) => {
       <View style={styles.header}>
         <View style={styles.searchHeader}>
           <SearchInput />
-          <IcCart />
+          <View>
+            <View style={styles.badge}>
+              <Text style={styles.count}>2</Text>
+            </View>
+            <IcCart />
+          </View>
         </View>
       </View>
       <ScrollView>
@@ -98,33 +104,50 @@ const Home = ({navigation}) => {
           <Text style={styles.label}>Kategori</Text>
           <View style={styles.category}>
             <View style={styles.content}>
-              <View style={styles.card}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.card}
+                onPress={() => navigation.navigate('ListCategory', 'Fashion')}>
                 <Image source={Category1} />
-              </View>
+              </TouchableOpacity>
               <Text style={styles.textCategory}>Fashion</Text>
             </View>
             <View style={styles.content}>
-              <View style={styles.card}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.card}
+                onPress={() =>
+                  navigation.navigate('ListCategory', 'Elektronik')
+                }>
                 <Image source={Category2} />
-              </View>
+              </TouchableOpacity>
               <Text style={styles.textCategory}>Elektronik</Text>
             </View>
             <View style={styles.content}>
-              <View style={styles.card}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.card}
+                onPress={() => navigation.navigate('ListCategory', 'Dapur')}>
                 <Image source={Category3} />
-              </View>
+              </TouchableOpacity>
               <Text style={styles.textCategory}>Dapur</Text>
             </View>
             <View style={styles.content}>
-              <View style={styles.card}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.card}
+                onPress={() => navigation.navigate('ListCategory', 'Gaming')}>
                 <Image source={Category4} />
-              </View>
+              </TouchableOpacity>
               <Text style={styles.textCategory}>Gaming</Text>
             </View>
             <View style={styles.content}>
-              <View style={styles.card}>
+              <TouchableOpacity
+                activeOpacity={0.7}
+                style={styles.card}
+                onPress={() => navigation.navigate('ListCategory', 'Laptop')}>
                 <Image source={Category5} />
-              </View>
+              </TouchableOpacity>
               <Text style={styles.textCategory}>Laptop</Text>
             </View>
           </View>
@@ -141,6 +164,7 @@ const Home = ({navigation}) => {
         <Product
           title="Rekomendasi untuk Anda"
           type="normal"
+          more={() => navigation.navigate('ListProduct')}
           onPress={() => navigation.navigate('ProductDetail', 'normal')}
         />
         <Gap height={80} />
@@ -226,5 +250,22 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-SemiBold',
     fontSize: normalize(12),
     color: '#000000',
+  },
+  badge: {
+    backgroundColor: '#FF2D2D',
+    width: normalize(13),
+    height: normalize(13),
+    borderRadius: normalize(13 / 2),
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: normalize(0),
+    right: normalize(0),
+    zIndex: 1,
+  },
+  count: {
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize: normalize(10),
+    color: '#FFFFFF',
   },
 });

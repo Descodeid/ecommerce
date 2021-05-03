@@ -14,7 +14,14 @@ const Header = ({text, type, onPress}) => {
         <Gap width={15} />
         <Text style={styles.text}>{text}</Text>
       </View>
-      {type === 'cart' && <IcCartBlack />}
+      {type === 'cart' && (
+        <View>
+          <View style={styles.badge}>
+            <Text style={styles.count}>2</Text>
+          </View>
+          <IcCartBlack />
+        </View>
+      )}
     </View>
   );
 };
@@ -36,5 +43,22 @@ const styles = StyleSheet.create({
     fontFamily: 'OpenSans-Bold',
     fontSize: normalize(16),
     color: '#000000',
+  },
+  badge: {
+    backgroundColor: '#FF2D2D',
+    width: normalize(13),
+    height: normalize(13),
+    borderRadius: normalize(13 / 2),
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'absolute',
+    top: normalize(0),
+    right: normalize(0),
+    zIndex: 1,
+  },
+  count: {
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize: normalize(10),
+    color: '#FFFFFF',
   },
 });
