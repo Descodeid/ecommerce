@@ -1,11 +1,17 @@
 import React from 'react';
-import {ScrollView, StyleSheet, Text, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import normalize from 'react-native-normalize';
 import {ListProduct} from '..';
 import {IcClock} from '../../../assets';
 import {Gap} from '../../atoms';
 
-const Product = ({title, discount, type, onPress}) => {
+const Product = ({title, discount, type, onPress, more}) => {
   return (
     <View>
       <View style={styles.containerLabel}>
@@ -14,9 +20,9 @@ const Product = ({title, discount, type, onPress}) => {
           <Gap width={5} />
           <Text style={styles.diskon}>{discount}</Text>
         </View>
-        <View>
+        <TouchableOpacity activeOpacity={0.7} onPress={more}>
           <Text style={styles.selengkapnya}>Selengkapnya</Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <Gap height={6} />
       {discount && (

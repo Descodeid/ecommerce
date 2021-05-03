@@ -50,7 +50,7 @@ export default ListProduct;
 
 const styles = StyleSheet.create({
   container: {
-    width: normalize(170),
+    width: normalize(163),
     backgroundColor: '#FFFFFF',
     borderRadius: normalize(5),
     marginRight: normalize(15),

@@ -6,6 +6,7 @@ import SearchInput from './SearchInput';
 import Product from './Product';
 import ListProduct from './ListProduct';
 import Header from './Header';
+import DiscountTabSection from './DiscountTabSection';
 
 export {
   IntroSliderItem,
@@ -16,4 +17,5 @@ export {
   Product,
   ListProduct,
   Header,
+  DiscountTabSection,
 };

@@ -7,6 +7,7 @@ import Login from './Login';
 import Profile from './Profile';
 import TransactionSuccess from './TransactionSuccess';
 import Support from './Support';
+import ListProductDiscount from './ListProductDiscount';
 
 export {
   SplashScreen,
@@ -18,4 +19,5 @@ export {
   Profile,
   TransactionSuccess,
   Support,
+  ListProductDiscount,
 };

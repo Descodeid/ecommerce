@@ -134,6 +134,7 @@ const Home = ({navigation}) => {
           title="Produk"
           discount="Diskon"
           type="diskon"
+          more={() => navigation.navigate('ListProductDiscount')}
           onPress={() => navigation.navigate('ProductDetail', 'diskon')}
         />
         <Gap height={20} />
