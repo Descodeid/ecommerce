@@ -2,6 +2,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import {
+  Cart,
   Home,
   IntroSlider,
   ListCategory,
@@ -75,6 +76,11 @@ const Router = () => {
       <Stack.Screen
         name="ListCategory"
         component={ListCategory}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Cart"
+        component={Cart}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

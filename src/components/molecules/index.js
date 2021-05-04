@@ -8,6 +8,8 @@ import ListProduct from './ListProduct';
 import Header from './Header';
 import DiscountTabSection from './DiscountTabSection';
 import ProductTabSection from './ProductTabSection';
+import Counter from './Counter';
+import Number from './Number';
 
 export {
   IntroSliderItem,
@@ -20,4 +22,6 @@ export {
   Header,
   DiscountTabSection,
   ProductTabSection,
+  Counter,
+  Number,
 };

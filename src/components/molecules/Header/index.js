@@ -15,7 +15,7 @@ const Header = ({text, type, onPress}) => {
         <Text style={styles.text}>{text}</Text>
       </View>
       {type === 'cart' && (
-        <View>
+        <View TouchableOpacity activeOpacity={0.7}>
           <View style={styles.badge}>
             <Text style={styles.count}>2</Text>
           </View>

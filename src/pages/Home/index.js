@@ -38,12 +38,14 @@ const Home = ({navigation}) => {
       <View style={styles.header}>
         <View style={styles.searchHeader}>
           <SearchInput />
-          <View>
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('Cart')}>
             <View style={styles.badge}>
               <Text style={styles.count}>2</Text>
             </View>
             <IcCart />
-          </View>
+          </TouchableOpacity>
         </View>
       </View>
       <ScrollView>

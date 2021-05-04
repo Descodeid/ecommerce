@@ -10,6 +10,7 @@ import Support from './Support';
 import ListProductDiscount from './ListProductDiscount';
 import ListProduct from './ListProduct';
 import ListCategory from './ListCategory';
+import Cart from './Cart';
 
 export {
   SplashScreen,
@@ -24,4 +25,5 @@ export {
   ListProductDiscount,
   ListProduct,
   ListCategory,
+  Cart,
 };

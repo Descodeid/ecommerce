@@ -22,6 +22,10 @@ import IcTransaction from './IcTransaction.svg';
 import IcTransactionActive from './IcTransactionActive.svg';
 import IcWhatsapp from './IcWhatsapp.png';
 import IcClockBlue from './IcClockBlue.svg';
+import IcTrash from './IcTrash.svg';
+import IcMinus from './IcMinus.svg';
+import IcPlus from './IcPlus.svg';
+
 export {
   IcCheck,
   IcArrowRight,
@@ -47,4 +51,7 @@ export {
   IcItem5,
   IcClockBlue,
   IcWhatsapp,
+  IcTrash,
+  IcMinus,
+  IcPlus,
 };
