@@ -10,6 +10,7 @@ import DiscountTabSection from './DiscountTabSection';
 import ProductTabSection from './ProductTabSection';
 import Counter from './Counter';
 import Number from './Number';
+import SlidingUpPanel from './SlidingUpPanel';
 
 export {
   IntroSliderItem,
@@ -24,4 +25,5 @@ export {
   ProductTabSection,
   Counter,
   Number,
+  SlidingUpPanel,
 };

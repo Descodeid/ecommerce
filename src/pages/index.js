@@ -11,6 +11,9 @@ import ListProductDiscount from './ListProductDiscount';
 import ListProduct from './ListProduct';
 import ListCategory from './ListCategory';
 import Cart from './Cart';
+import Checkout from './Checkout';
+import AddAddress from './AddAddress';
+import EditAddress from './EditAddress';
 
 export {
   SplashScreen,
@@ -26,4 +29,7 @@ export {
   ListProduct,
   ListCategory,
   Cart,
+  Checkout,
+  AddAddress,
+  EditAddress,
 };

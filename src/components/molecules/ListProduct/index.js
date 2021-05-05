@@ -3,8 +3,10 @@ import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import normalize from 'react-native-normalize';
 import {IcDot, IcStar, Product1} from '../../../assets';
 import {Button, Gap} from '../../atoms';
+import {useNavigation} from '@react-navigation/native';
 
 const ListProduct = ({type, onPress}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <TouchableOpacity activeOpacity={0.7} onPress={onPress}>
@@ -31,7 +33,11 @@ const ListProduct = ({type, onPress}) => {
         <Gap width={14} />
       </View>
       <View style={styles.button}>
-        <Button text="Tambah ke Keranjang" borderRadius={10} />
+        <Button
+          text="Tambah ke Keranjang"
+          borderRadius={10}
+          onPress={() => navigation.navigate('Cart')}
+        />
       </View>
       {type === 'diskon' && (
         <>

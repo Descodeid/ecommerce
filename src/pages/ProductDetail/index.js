@@ -174,7 +174,11 @@ const ProductDetail = ({navigation, route}) => {
         <Gap height={70} />
       </ScrollView>
       <View style={styles.button}>
-        <Button text="Tambah ke Keranjang" fontSize={14} />
+        <Button
+          text="Tambah ke Keranjang"
+          fontSize={14}
+          onPress={() => navigation.navigate('Cart')}
+        />
       </View>
     </View>
   );

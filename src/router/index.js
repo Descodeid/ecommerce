@@ -2,7 +2,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import {
+  AddAddress,
   Cart,
+  Checkout,
+  EditAddress,
   Home,
   IntroSlider,
   ListCategory,
@@ -13,6 +16,7 @@ import {
   Profile,
   Register,
   SplashScreen,
+  TransactionSuccess,
 } from '../pages';
 import {BottomNavigation} from '../components';
 
@@ -81,6 +85,26 @@ const Router = () => {
       <Stack.Screen
         name="Cart"
         component={Cart}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Checkout"
+        component={Checkout}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AddAddress"
+        component={AddAddress}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EditAddress"
+        component={EditAddress}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="TransactionSuccess"
+        component={TransactionSuccess}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

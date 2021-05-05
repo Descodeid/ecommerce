@@ -3,8 +3,10 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import normalize from 'react-native-normalize';
 import {IcArrowLeft, IcCartBlack} from '../../../assets';
 import {Gap} from '../../atoms';
+import {useNavigation} from '@react-navigation/native';
 
 const Header = ({text, type, onPress}) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.left}>
@@ -19,7 +21,11 @@ const Header = ({text, type, onPress}) => {
           <View style={styles.badge}>
             <Text style={styles.count}>2</Text>
           </View>
-          <IcCartBlack />
+          <TouchableOpacity
+            activeOpacity={0.7}
+            onPress={() => navigation.navigate('Cart')}>
+            <IcCartBlack />
+          </TouchableOpacity>
         </View>
       )}
     </View>

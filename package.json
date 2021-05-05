@@ -11,6 +11,7 @@
     "emulator": "emulator -avd Pixel_4"
   },
   "dependencies": {
+    "@react-native-community/blur": "^3.6.0",
     "@react-native-community/checkbox": "^0.5.7",
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.11.10",

@@ -190,7 +190,12 @@ const Cart = ({navigation}) => {
           <Number number={total} style={styles.total} />
         </View>
         <View style={styles.button}>
-          <Button text="Checkout" borderRadius={10} fontSize={14} />
+          <Button
+            text="Checkout"
+            borderRadius={10}
+            fontSize={14}
+            onPress={() => navigation.navigate('Checkout')}
+          />
         </View>
       </View>
     </View>

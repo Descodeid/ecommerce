@@ -3,15 +3,17 @@ import ILButtonHelp from './ILButtonHelp';
 import ILLogin from './ILLogin';
 import ILLogo from './ILLogo.png';
 import ILProfile from './ILProfile';
-import ILRegister from './ILRegister';
-import ILTerimaKasih from './ILTerimaKasih';
+import ILAuth from './ILAuth';
+import ILTransactionSuccess from './ILTransactionSuccess';
+import ILEmptyAddress from './ILEmptyAddress.svg';
 
 export {
   ILLogo,
-  ILRegister,
+  ILAuth,
   ILBantuan,
   ILButtonHelp,
-  ILTerimaKasih,
+  ILTransactionSuccess,
   ILLogin,
   ILProfile,
+  ILEmptyAddress,
 };

@@ -1,5 +1,6 @@
 import IcArrowLeft from './IcArrowLeft.svg';
 import IcArrowRight from './IcArrowRight.svg';
+import IcArrowRightBlack from './IcArrowRightBlack.svg';
 import IcCart from './IcCart.svg';
 import IcCartBlack from './IcCartBlack.svg';
 import IcCheck from './IcCheck.png';
@@ -25,6 +26,8 @@ import IcClockBlue from './IcClockBlue.svg';
 import IcTrash from './IcTrash.svg';
 import IcMinus from './IcMinus.svg';
 import IcPlus from './IcPlus.svg';
+import IcHide from './IcHide.svg';
+import IcShow from './IcShow.svg';
 
 export {
   IcCheck,
@@ -54,4 +57,7 @@ export {
   IcTrash,
   IcMinus,
   IcPlus,
+  IcArrowRightBlack,
+  IcHide,
+  IcShow,
 };
