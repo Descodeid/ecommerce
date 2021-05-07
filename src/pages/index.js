@@ -14,6 +14,9 @@ import Cart from './Cart';
 import Checkout from './Checkout';
 import AddAddress from './AddAddress';
 import EditAddress from './EditAddress';
+import AboutUs from './AboutUs';
+import Term from './Term';
+import ChangePassword from './ChangePassword';
 
 export {
   SplashScreen,
@@ -32,4 +35,7 @@ export {
   Checkout,
   AddAddress,
   EditAddress,
+  AboutUs,
+  Term,
+  ChangePassword,
 };

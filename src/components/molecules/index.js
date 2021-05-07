@@ -11,6 +11,8 @@ import ProductTabSection from './ProductTabSection';
 import Counter from './Counter';
 import Number from './Number';
 import SlidingUpPanel from './SlidingUpPanel';
+import BeforeLogin from './BeforeLogin';
+import ListProfile from './ListProfile';
 
 export {
   IntroSliderItem,
@@ -26,4 +28,6 @@ export {
   Counter,
   Number,
   SlidingUpPanel,
+  BeforeLogin,
+  ListProfile,
 };

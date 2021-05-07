@@ -6,6 +6,7 @@ import ILProfile from './ILProfile';
 import ILAuth from './ILAuth';
 import ILTransactionSuccess from './ILTransactionSuccess';
 import ILEmptyAddress from './ILEmptyAddress.svg';
+import Background from './Background.jpg';
 
 export {
   ILLogo,
@@ -16,4 +17,5 @@ export {
   ILLogin,
   ILProfile,
   ILEmptyAddress,
+  Background,
 };

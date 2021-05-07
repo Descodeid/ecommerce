@@ -2,8 +2,10 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {createStackNavigator} from '@react-navigation/stack';
 import React from 'react';
 import {
+  AboutUs,
   AddAddress,
   Cart,
+  ChangePassword,
   Checkout,
   EditAddress,
   Home,
@@ -16,6 +18,8 @@ import {
   Profile,
   Register,
   SplashScreen,
+  Support,
+  Term,
   TransactionSuccess,
 } from '../pages';
 import {BottomNavigation} from '../components';
@@ -105,6 +109,26 @@ const Router = () => {
       <Stack.Screen
         name="TransactionSuccess"
         component={TransactionSuccess}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Support"
+        component={Support}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="AboutUs"
+        component={AboutUs}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="Term"
+        component={Term}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="ChangePassword"
+        component={ChangePassword}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

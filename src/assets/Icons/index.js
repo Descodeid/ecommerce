@@ -28,6 +28,13 @@ import IcMinus from './IcMinus.svg';
 import IcPlus from './IcPlus.svg';
 import IcHide from './IcHide.svg';
 import IcShow from './IcShow.svg';
+import IcPen from './IcPen.svg';
+import IcLock from './IcLock.svg';
+import IcWork from './IcWork.svg';
+import IcShield from './IcShield.svg';
+import IcCall from './IcCall.svg';
+import IcLogout from './IcLogout.svg';
+import IcWarning from './IcWarning.svg';
 
 export {
   IcCheck,
@@ -60,4 +67,11 @@ export {
   IcArrowRightBlack,
   IcHide,
   IcShow,
+  IcCall,
+  IcLock,
+  IcLogout,
+  IcPen,
+  IcShield,
+  IcWork,
+  IcWarning,
 };

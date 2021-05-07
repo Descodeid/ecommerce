@@ -1,13 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View} from 'react-native';
 import normalize from 'react-native-normalize';
-import {IcWhatsapp, ILBantuan} from '../../assets';
+import {ILBantuan} from '../../assets';
 import {Button, Gap, Header} from '../../components';
 
-const Support = () => {
+const Support = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header text="Bantuan" />
+      <Header text="Bantuan" onPress={() => navigation.goBack()} />
       <Gap height={94} />
       <View style={styles.container}>
         <ILBantuan />
@@ -21,12 +21,7 @@ const Support = () => {
         </View>
         <Gap height={30} />
         <View style={styles.button}>
-          <Button
-            text="083623723232"
-            backgroundColor="#DCFFEE"
-            color="#3D3D3D"
-            icon={<Image source={IcWhatsapp} />}
-          />
+          <Button text="Hubungi Kami" fontSize={14} />
         </View>
       </View>
     </View>
@@ -45,7 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   descContainer: {
-    width: normalize(180),
+    width: normalize(200),
   },
   desc: {
     textAlign: 'center',

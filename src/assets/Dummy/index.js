@@ -6,6 +6,7 @@ import Category5 from './Category5.png';
 import Product1 from './Product1.png';
 import Product2 from './Product2.png';
 import Product7 from './Product7.png';
+import User from './User.png';
 
 export {
   Category1,
@@ -16,4 +17,5 @@ export {
   Product1,
   Product2,
   Product7,
+  User,
 };

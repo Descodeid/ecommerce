@@ -5662,7 +5662,7 @@ prompts@^2.0.1, prompts@^2.4.0:
     kleur "^3.0.3"
     sisteransi "^1.0.5"
 
-prop-types@^15.5.10, prop-types@^15.7.2:
+prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.npmjs.org/prop-types/-/prop-types-15.7.2.tgz"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -5767,6 +5767,14 @@ react-native-pager-view@^5.1.7:
   resolved "https://registry.yarnpkg.com/react-native-pager-view/-/react-native-pager-view-5.1.7.tgz#9ca5807e39801fc1135709ef6d495773eafa784e"
   integrity sha512-mb7xa0XnMlNXrIE422vWKPBVlt0GBP21744zT8yEv6Xe/0aAM/dsDugD3dy9z4vybyp2yszAzw9XP0bIsfS6LA==
 
+react-native-password-strength-meter@0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-password-strength-meter/-/react-native-password-strength-meter-0.0.5.tgz#7e5d38a844b2221937f893f0d80a8ffa575159b0"
+  integrity sha512-MRKcs0+xkS1ufTVNJsvcXJy30A8IXxZpfY8NYCuAovup8gHYsRP/jUOf/T55dBGBuaSbz7FHFDp2LmV8cBktkw==
+  dependencies:
+    prop-types "^15.6.2"
+    react-native-speedometer "^1.0.0"
+
 react-native-reanimated@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/react-native-reanimated/-/react-native-reanimated-2.1.0.tgz#b9ad04aee490e1e030d0a6cdaa43a14895d9a54d"
@@ -5786,6 +5794,13 @@ react-native-screens@^3.1.1:
   version "3.1.1"
   resolved "https://registry.npmjs.org/react-native-screens/-/react-native-screens-3.1.1.tgz"
   integrity sha512-cjhK85T8LQ7uqqmwvLb8FKNk1RfgJd1jtbUm1lOxUmJreFki5Wh2SUlx0DAvNG35U6quGD15KPYRducGa+M04g==
+
+react-native-speedometer@^1.0.0:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-speedometer/-/react-native-speedometer-1.0.5.tgz#228b0710d7cbf257b07ae4615825eda86f746d3d"
+  integrity sha512-vloJbiIATVFBMayTZXE9Zf5GD8daBJsUxU83xxNo/vynfX84omu3nMgwYxpAqwO4oDOI1Nj86pFzPkU7kPqGIA==
+  dependencies:
+    prop-types "^15.6.2"
 
 react-native-svg-transformer@^0.14.3:
   version "0.14.3"

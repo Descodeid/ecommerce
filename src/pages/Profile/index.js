@@ -1,42 +1,63 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {Image, ImageBackground, StyleSheet, Text, View} from 'react-native';
 import normalize from 'react-native-normalize';
-import {ILProfile} from '../../assets';
-import {Button, Gap} from '../../components';
+import {
+  Background,
+  IcCall,
+  IcLock,
+  IcLogout,
+  IcPen,
+  IcShield,
+  IcWork,
+  User,
+} from '../../assets';
+import {BeforeLogin, Gap, ListProfile} from '../../components';
 
 const Profile = ({navigation}) => {
-  return (
-    <View style={styles.page}>
-      <ILProfile />
-      <Gap height={30} />
-      <View style={styles.container}>
-        <Text style={styles.textRegister}>Register Sekarang</Text>
-        <Gap height={10} />
-        <Text style={styles.desc}>
-          kamu belum terdaftar, ayo daftar sekarang dan nikmati kemudahan dan
-          kepuasan dalam berbelanja
-        </Text>
-      </View>
-      <Gap height={44} />
-      <View style={styles.button}>
-        <Button
-          text="Register Sekarang"
-          fontSize={14}
-          onPress={() => navigation.navigate('Register')}
+  const [login] = React.useState(true);
+  if (login) {
+    return (
+      <View style={styles.page}>
+        <ImageBackground source={Background} style={styles.background}>
+          <View style={styles.header}>
+            <Image source={User} />
+            <Gap width={24} />
+            <View>
+              <Text style={styles.name}>Fulan bin fulan</Text>
+              <Text style={styles.phone}>087232272626</Text>
+            </View>
+          </View>
+        </ImageBackground>
+        <ListProfile text="Edit Profile" icon={<IcPen />} />
+        <ListProfile
+          text="Ubah Kata Sandi"
+          icon={<IcLock />}
+          onPress={() => navigation.navigate('ChangePassword')}
         />
+        <View style={styles.spacing}>
+          <Text style={styles.more}>Lainnya</Text>
+        </View>
+        <ListProfile
+          text="Tentang Perusahaan"
+          icon={<IcWork />}
+          onPress={() => navigation.navigate('AboutUs')}
+        />
+        <ListProfile
+          text="Kebijakan Privasi"
+          icon={<IcShield />}
+          onPress={() => navigation.navigate('Term')}
+        />
+        <ListProfile
+          text="Bantuan"
+          icon={<IcCall />}
+          onPress={() => navigation.navigate('Support')}
+        />
+        <ListProfile text="Logout" icon={<IcLogout />} color="#FFDCDC" />
       </View>
-      <Gap height={24} />
-      <View style={styles.footer}>
-        <Text style={styles.text3}>Sudah punya akun?</Text>
-        <Gap width={6} />
-        <TouchableOpacity
-          activeOpacity={0.7}
-          onPress={() => navigation.navigate('Login')}>
-          <Text style={styles.text4}>Login disini</Text>
-        </TouchableOpacity>
-      </View>
-    </View>
-  );
+    );
+  } else {
+    return <BeforeLogin />;
+  }
 };
 
 export default Profile;
@@ -45,38 +66,35 @@ const styles = StyleSheet.create({
   page: {
     flex: 1,
     backgroundColor: '#FFFFFF',
-    justifyContent: 'center',
-    alignItems: 'center',
   },
-  container: {
-    width: normalize(210),
-    alignItems: 'center',
-  },
-  textRegister: {
-    fontFamily: 'OpenSans-Bold',
-    fontSize: normalize(16),
-    color: '#3D3D3D',
-  },
-  desc: {
-    fontFamily: 'OpenSans-Regular',
-    fontSize: normalize(14),
-    color: '#3D3D3D',
-    textAlign: 'center',
-  },
-  button: {
+  background: {
     width: '100%',
+    height: normalize(130),
+  },
+  header: {
     paddingHorizontal: normalize(15),
-  },
-  footer: {
+    paddingVertical: normalize(30),
     flexDirection: 'row',
+    alignItems: 'center',
   },
-  text3: {
-    fontFamily: 'OpenSans-Regular',
-    fontSize: normalize(14),
-    color: '#3D3D3D',
-  },
-  text4: {
+  name: {
     fontFamily: 'OpenSans-Bold',
+    fontSize: normalize(20),
+    color: '#FFFFFF',
+  },
+  phone: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: normalize(20),
+    color: '#FFFFFF',
+  },
+  spacing: {
+    backgroundColor: 'rgba(69, 132, 255, 0.2)',
+    paddingHorizontal: normalize(15),
+    paddingVertical: normalize(8),
+    justifyContent: 'center',
+  },
+  more: {
+    fontFamily: 'OpenSans-SemiBold',
     fontSize: normalize(14),
     color: '#4584FF',
   },
