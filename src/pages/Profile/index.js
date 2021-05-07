@@ -28,7 +28,11 @@ const Profile = ({navigation}) => {
             </View>
           </View>
         </ImageBackground>
-        <ListProfile text="Edit Profile" icon={<IcPen />} />
+        <ListProfile
+          text="Edit Profile"
+          icon={<IcPen />}
+          onPress={() => navigation.navigate('EditProfile')}
+        />
         <ListProfile
           text="Ubah Kata Sandi"
           icon={<IcLock />}

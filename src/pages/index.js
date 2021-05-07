@@ -17,6 +17,7 @@ import EditAddress from './EditAddress';
 import AboutUs from './AboutUs';
 import Term from './Term';
 import ChangePassword from './ChangePassword';
+import EditProfile from './EditProfile';
 
 export {
   SplashScreen,
@@ -38,4 +39,5 @@ export {
   AboutUs,
   Term,
   ChangePassword,
+  EditProfile,
 };

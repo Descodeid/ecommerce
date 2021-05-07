@@ -10,9 +10,9 @@ const AddAddress = ({navigation}) => {
       <Gap height={12} />
       <View style={styles.container}>
         <View style={styles.inputContainer}>
-          <Text style={styles.label}>Nama Alamat (contoh : Rumah, Kantor)</Text>
+          <Text style={styles.label}>Nama Alamat</Text>
           <TextInput
-            placeholder="Contoh: Rumah"
+            placeholder="Contoh: Rumah, Kantor"
             style={styles.input}
             placeholderTextColor="#747474"
           />
@@ -70,7 +70,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#EFEFEF',
     fontFamily: 'OpenSans-Regular',
-    fontSize: normalize(12),
+    fontSize: normalize(14),
     color: '#3D3D3D',
   },
 });

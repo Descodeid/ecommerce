@@ -35,6 +35,9 @@ import IcShield from './IcShield.svg';
 import IcCall from './IcCall.svg';
 import IcLogout from './IcLogout.svg';
 import IcWarning from './IcWarning.svg';
+import IcCamera from './IcCamera.svg';
+import IcSuccess from './IcSuccess.svg';
+import IcError from './IcError.svg';
 
 export {
   IcCheck,
@@ -74,4 +77,7 @@ export {
   IcShield,
   IcWork,
   IcWarning,
+  IcCamera,
+  IcError,
+  IcSuccess,
 };

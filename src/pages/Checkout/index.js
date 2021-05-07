@@ -246,6 +246,7 @@ const Checkout = ({navigation}) => {
         show={isShow}
         closePopup={close}
         data={data}
+        type="Pengiriman"
       />
 
       <SlidingUpPanel

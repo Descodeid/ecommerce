@@ -8,6 +8,7 @@ import {
   ChangePassword,
   Checkout,
   EditAddress,
+  EditProfile,
   Home,
   IntroSlider,
   ListCategory,
@@ -129,6 +130,11 @@ const Router = () => {
       <Stack.Screen
         name="ChangePassword"
         component={ChangePassword}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="EditProfile"
+        component={EditProfile}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

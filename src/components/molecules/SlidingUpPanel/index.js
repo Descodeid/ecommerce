@@ -10,12 +10,95 @@ import {
   View,
 } from 'react-native';
 import normalize from 'react-native-normalize';
-import {IcClockBlue} from '../../../assets';
-import {Gap} from '../../atoms';
+import {IcClockBlue, IcError, IcSuccess} from '../../../assets';
+import {Button, Gap} from '../../atoms';
+import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import Toast, {BaseToast} from 'react-native-toast-message';
+import {useDispatch} from 'react-redux';
 
-const SlidingUpPanel = ({title, data, show, closePopup, type}) => {
+const SlidingUpPanel = ({title, subtitle, data, show, closePopup, type}) => {
+  const dispatch = useDispatch();
+  const takePhoto = () => {
+    launchCamera(
+      {
+        quality: 0.5,
+        maxWidth: 200,
+        maxHeight: 200,
+      },
+      response => {
+        if (response.didCancel || response.error) {
+          closePopup();
+          Toast.show({
+            text1: 'Anda tidak memilih photo',
+            type: 'errorAlert',
+            position: 'bottom',
+          });
+        } else {
+          closePopup();
+          const source = {uri: response.uri};
+          dispatch({type: 'SET_PHOTO', source});
+        }
+      },
+    );
+  };
+
+  const chooseFromLibrary = () => {
+    launchImageLibrary(
+      {
+        quality: 0.5,
+        maxWidth: 200,
+        maxHeight: 200,
+      },
+      response => {
+        if (response.didCancel || response.error) {
+          closePopup();
+          Toast.show({
+            text1: 'Anda tidak memilih photo',
+            type: 'errorAlert',
+            position: 'bottom',
+          });
+        } else {
+          closePopup();
+          const source = {uri: response.uri};
+          dispatch({type: 'SET_PHOTO', source});
+        }
+      },
+    );
+  };
+
+  const toastConfig = {
+    success: ({text1, props, ...rest}) => (
+      <BaseToast
+        {...rest}
+        style={styles.leftSuccess}
+        contentContainerStyle={styles.padding}
+        text1Style={styles.textAlert}
+        text1={text1}
+        text2={props.uuid}
+      />
+    ),
+
+    errorAlert: ({text1, props, ...rest}) => (
+      <View style={styles.alertError}>
+        <View style={styles.border}>
+          <IcError />
+        </View>
+        <Gap width={8} />
+        <Text style={styles.textAlert}>{text1}</Text>
+      </View>
+    ),
+    successAlert: ({text1, props, ...rest}) => (
+      <View style={styles.alertSuccess}>
+        <IcSuccess />
+        <Gap width={8} />
+        <Text style={styles.textAlert}>{text1}</Text>
+      </View>
+    ),
+  };
+
   return (
     <>
+      <Toast config={toastConfig} ref={ref => Toast.setRef(ref)} />
       {show && (
         <BlurView blurType="dark" blurAmount={100} style={styles.blur} />
       )}
@@ -35,7 +118,64 @@ const SlidingUpPanel = ({title, data, show, closePopup, type}) => {
           style={styles.pressable}
         />
 
-        {type === 'Promo' ? (
+        {type === 'Upload' && (
+          <View style={styles.modalUpload}>
+            <View style={styles.titleContainer}>
+              <Text style={styles.title}>{title}</Text>
+              <Text style={styles.subtitle}>{subtitle}</Text>
+            </View>
+            <Button
+              text="Take a photo"
+              fontSize={14}
+              borderRadius={10}
+              onPress={takePhoto}
+            />
+            <Gap height={20} />
+            <Button
+              text="Choose from library"
+              fontSize={14}
+              borderRadius={10}
+              onPress={chooseFromLibrary}
+            />
+            <Gap height={20} />
+            <Button
+              text="Cancel"
+              fontSize={14}
+              borderRadius={10}
+              onPress={() => closePopup()}
+            />
+          </View>
+        )}
+
+        {type === 'Pengiriman' && (
+          <View style={styles.modal}>
+            <Text style={styles.title}>{title}</Text>
+            <Gap height={25} />
+            <FlatList
+              data={data}
+              showsVerticalScrollIndicator={false}
+              renderItem={({item}) => {
+                return (
+                  <View style={styles.content}>
+                    <Image source={item.image} />
+                    <Gap width={15} />
+                    <View>
+                      <Text style={styles.name}>{item.name}</Text>
+                      <Gap height={3} />
+                      <Text style={styles.price}>{item.price}</Text>
+                      <Gap height={3} />
+                      <Text style={styles.duration}>{item.duration}</Text>
+                    </View>
+                  </View>
+                );
+              }}
+              extraData={data}
+              keyExtractor={item => `key-${item.id}`}
+            />
+          </View>
+        )}
+
+        {type === 'Promo' && (
           <View style={styles.modalPromo}>
             <Text style={styles.title}>{title}</Text>
             <Gap height={18} />
@@ -58,32 +198,6 @@ const SlidingUpPanel = ({title, data, show, closePopup, type}) => {
                     </View>
                     <View style={styles.circle1} />
                     <View style={styles.circle2} />
-                  </View>
-                );
-              }}
-              extraData={data}
-              keyExtractor={item => `key-${item.id}`}
-            />
-          </View>
-        ) : (
-          <View style={styles.modal}>
-            <Text style={styles.title}>{title}</Text>
-            <Gap height={25} />
-            <FlatList
-              data={data}
-              showsVerticalScrollIndicator={false}
-              renderItem={({item}) => {
-                return (
-                  <View style={styles.content}>
-                    <Image source={item.image} />
-                    <Gap width={15} />
-                    <View>
-                      <Text style={styles.name}>{item.name}</Text>
-                      <Gap height={3} />
-                      <Text style={styles.price}>{item.price}</Text>
-                      <Gap height={3} />
-                      <Text style={styles.duration}>{item.duration}</Text>
-                    </View>
                   </View>
                 );
               }}
@@ -130,9 +244,31 @@ const styles = StyleSheet.create({
     paddingHorizontal: normalize(15),
     paddingTop: normalize(30),
   },
+  modalUpload: {
+    width: '100%',
+    height: '40%',
+    position: 'absolute',
+    bottom: 0,
+    backgroundColor: '#FFFFFF',
+    borderTopLeftRadius: normalize(30),
+    borderTopRightRadius: normalize(30),
+    paddingHorizontal: normalize(15),
+    paddingTop: normalize(30),
+  },
+  titleContainer: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginTop: normalize(20),
+    marginBottom: normalize(30),
+  },
   title: {
     fontFamily: 'OpenSans-Bold',
     fontSize: normalize(16),
+    color: '#3D3D3D',
+  },
+  subtitle: {
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize: normalize(14),
     color: '#3D3D3D',
   },
   content: {
@@ -206,5 +342,42 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: normalize(108),
     right: normalize(-10),
+  },
+  leftSuccess: {
+    borderLeftColor: '#C7DAFF',
+  },
+  padding: {
+    paddingHorizontal: normalize(15),
+  },
+  textAlert: {
+    fontFamily: 'OpenSans-Regular',
+    fontSize: normalize(12),
+    color: '#000000',
+  },
+  alertError: {
+    height: normalize(56),
+    width: '90%',
+    backgroundColor: '#FFE4E3',
+    borderRadius: normalize(10),
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingHorizontal: normalize(15),
+  },
+  alertSuccess: {
+    height: normalize(56),
+    width: '90%',
+    backgroundColor: '#C7DAFF',
+    borderRadius: normalize(10),
+    alignItems: 'center',
+    flexDirection: 'row',
+    paddingHorizontal: normalize(15),
+  },
+  border: {
+    width: normalize(24),
+    height: normalize(24),
+    backgroundColor: '#FF7675',
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: normalize(12),
   },
 });
