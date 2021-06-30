@@ -38,6 +38,8 @@ import IcWarning from './IcWarning.svg';
 import IcCamera from './IcCamera.svg';
 import IcSuccess from './IcSuccess.svg';
 import IcError from './IcError.svg';
+import IcCartBlue from './IcCartBlue.svg';
+import IcCopy from './IcCopy.svg';
 
 export {
   IcCheck,
@@ -80,4 +82,6 @@ export {
   IcCamera,
   IcError,
   IcSuccess,
+  IcCartBlue,
+  IcCopy,
 };

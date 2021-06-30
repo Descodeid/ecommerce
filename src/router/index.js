@@ -7,6 +7,7 @@ import {
   Cart,
   ChangePassword,
   Checkout,
+  DetailTransaction,
   EditAddress,
   EditProfile,
   Home,
@@ -21,6 +22,7 @@ import {
   SplashScreen,
   Support,
   Term,
+  Transaction,
   TransactionSuccess,
 } from '../pages';
 import {BottomNavigation} from '../components';
@@ -32,8 +34,7 @@ const MainApp = () => {
   return (
     <Tab.Navigator tabBar={props => <BottomNavigation {...props} />}>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Transaksi" component={Home} />
-      <Tab.Screen name="Al-Qur'an" component={Home} />
+      <Tab.Screen name="Transaksi" component={Transaction} />
       <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
@@ -41,7 +42,7 @@ const MainApp = () => {
 
 const Router = () => {
   return (
-    <Stack.Navigator initialRouteName="MainApp">
+    <Stack.Navigator initialRouteName="SplashScreen">
       <Stack.Screen
         name="SplashScreen"
         component={SplashScreen}
@@ -135,6 +136,11 @@ const Router = () => {
       <Stack.Screen
         name="EditProfile"
         component={EditProfile}
+        options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name="DetailTransaction"
+        component={DetailTransaction}
         options={{headerShown: false}}
       />
     </Stack.Navigator>

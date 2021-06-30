@@ -13,6 +13,8 @@ import Number from './Number';
 import SlidingUpPanel from './SlidingUpPanel';
 import BeforeLogin from './BeforeLogin';
 import ListProfile from './ListProfile';
+import TransactionTabSection from './TransactionTabSection';
+import ListTransaction from './ListTransaction';
 
 export {
   IntroSliderItem,
@@ -30,4 +32,6 @@ export {
   SlidingUpPanel,
   BeforeLogin,
   ListProfile,
+  TransactionTabSection,
+  ListTransaction,
 };

@@ -18,6 +18,8 @@ import AboutUs from './AboutUs';
 import Term from './Term';
 import ChangePassword from './ChangePassword';
 import EditProfile from './EditProfile';
+import Transaction from './Transaction';
+import DetailTransaction from './DetailTransaction';
 
 export {
   SplashScreen,
@@ -40,4 +42,6 @@ export {
   Term,
   ChangePassword,
   EditProfile,
+  Transaction,
+  DetailTransaction,
 };
